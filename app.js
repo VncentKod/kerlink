@@ -3,6 +3,9 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
 
+// Internal import
+const FormClient = require('./models/formClientModel')
+
 // Setup
 const app = express();
 app.set('view engine', 'ejs');
@@ -18,7 +21,7 @@ mongoose.connect(dbURI)
         console.log(err);
     })
 
-    
+
 // Middleware & static files 
 app.use(express.static('public'));
 app.use(morgan('dev'));
@@ -29,6 +32,15 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.post('/', (req, res) => {
+    const formClient = new FormClient(req.body);
+    formClient.save()
+        .then((result) => {
+            res.render('done');
+        });
+})
+
 app.use((req, res) => {
     res.status(404).render('404');
 });
+
