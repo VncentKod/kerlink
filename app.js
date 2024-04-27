@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 // Internal import
 const FormClient = require('./models/formClientModel');
 const Users = require('./models/usersModel');
+const formClient = require('./models/formClientModel');
 
 // Setup
 const app = express();
@@ -48,7 +49,10 @@ app.get('/login', (req, res) => {
 
 app.get('/admin', (req, res, next) => {
     if(connectedAsAdmin) {
-        res.render('done')
+        FormClient.find()
+            .then((result) => {
+                res.render('admin', {formClient: result});
+            })
     } else {
         res.redirect('login');
     }
