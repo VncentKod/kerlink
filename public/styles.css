@@ -1,16 +1,38 @@
 body {
+    font-family: 'Noto Serif', serif;
+}
+
+main {
     max-width: 1250px;
     margin: 20px auto;
     padding: 0 20px;
-    font-family: 'Noto Serif', serif;
-    max-width: 1250px;
+    border-left: 5px solid #1F3864;
+    border-right: 5px solid #1F3864;
 }
 label {
     margin-right: 15px;
+    font-weight: bold;
 }
 
-input {
+input,
+select {
     margin-bottom: 5px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.date {
+    display: flex;
+    align-items: flex-end;
+
+}
+
+#date {
+    margin-bottom: -1px;
 }
 .document-part {
     display: flex;
@@ -42,4 +64,38 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.condition {
+    font-style: italic;
+    font-weight: 550;
+    font-size: 10px;
+    padding: 5px 0 4px 0;
+    margin: 0;
+}
+
+.price-image {
+    max-width: 1250px;
+}
+
+.input-element-radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.inline {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.submit-button {
+    background-color: #FFA600;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
 }
