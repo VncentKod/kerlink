@@ -1,0 +1,45 @@
+body {
+    max-width: 1250px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Noto Serif', serif;
+    max-width: 1250px;
+}
+label {
+    margin-right: 15px;
+}
+
+input {
+    margin-bottom: 5px;
+}
+.document-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-part {
+    background-color: #1F3864;
+    color: white;
+    padding-left: 15px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-part {
+    text-decoration: underline;
+}
+
+.input-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
