@@ -4,8 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose')
 
 // Internal import
-const FormClient = require('./models/formClientModel');
-const formClient = require('./models/formClientModel');
+const indexRoutes = require('./routes/indexRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
 // Setup
@@ -31,18 +30,8 @@ app.use(express.urlencoded({extended: true}));
 
 
 // Request
-app.get('/', (req, res) => {
-    res.render('index');
-});
 
-app.post('/', (req, res) => {
-    const formClient = new FormClient(req.body);
-    formClient.save()
-        .then((result) => {
-            res.render('done');
-        });
-});
-
+app.use('/', indexRoutes);
 app.use('/', adminRoutes);
 
 app.use((req, res) => {
