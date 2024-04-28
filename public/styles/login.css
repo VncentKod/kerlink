@@ -36,7 +36,7 @@ body {
 }
 
 .form-group input {
-    width: 100%;
+    width: calc(100% - 22px); /* largeur du conteneur moins la largeur des bordures */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -45,7 +45,7 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #FFA600;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -54,5 +54,5 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ce8806;
 }
