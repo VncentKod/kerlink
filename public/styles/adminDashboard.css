@@ -26,22 +26,29 @@ a {
     margin: 0;
 }
 
-.delete-button {
+.action-button {
     width: 40px;
     height: 40px;
-    background-color: red;
     border: none;
     padding: 0;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.delete-button img {
+.delete-button {
+    background-color: red;
+}
+
+.add-button {
+    background-color: green;
+    margin-right: 10px;
+}
+.action-button img {
     margin-top: 2px;
     width: 30px; /* ajuster la taille de l'image */
     height: auto; /* conserver les proportions */
 }
 
-.delete-button:hover img {
+.action-button:hover img {
     filter: brightness(0.8); /* effet de survol sur l'image */
 }
