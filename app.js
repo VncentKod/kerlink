@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 
 // Internal import
 const FormClient = require('./models/formClientModel');
-const Users = require('./models/usersModel');
 const formClient = require('./models/formClientModel');
+const adminRoutes = require('./routes/adminRoutes');
 
 // Setup
 const app = express();
@@ -28,7 +28,7 @@ mongoose.connect(dbURI)
 app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
-let connectedAsAdmin = false;
+
 
 // Request
 app.get('/', (req, res) => {
@@ -43,32 +43,7 @@ app.post('/', (req, res) => {
         });
 });
 
-app.get('/login', (req, res) => {
-    res.render('login');
-})
-
-app.get('/admin', (req, res, next) => {
-    if(connectedAsAdmin) {
-        FormClient.find()
-            .then((result) => {
-                res.render('admin', {formClient: result});
-            })
-    } else {
-        res.redirect('login');
-    }
-})
-
-app.post('/login', (req, res) => {
-    Users.findById('662d5a472cd3c07bd5a0347e')
-        .then((result) => {
-            if (result.login === req.body.login && result.password === req.body.password) {
-                console.log(result.login);
-                console.log(req.body.login);
-                connectedAsAdmin = true;
-            }
-            res.redirect('/admin');
-        })
-});
+app.use('/', adminRoutes);
 
 app.use((req, res) => {
     res.status(404).render('404');
