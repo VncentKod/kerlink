@@ -13,11 +13,16 @@ const new_form = (req, res) => {
     const formClient = new FormClient(req.body);
     formClient.save()
         .then((result) => {
-            res.render('done');
+            res.redirect('/done');
         });
+}
+
+const form_completed = (req, res) => {
+    res.render('done')
 }
 
 module.exports = {
     index_page,
-    new_form
+    new_form,
+    form_completed
 };
