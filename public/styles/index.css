@@ -1,14 +1,17 @@
 body {
     font-family: 'Noto Serif', serif;
+    margin: 0;
+    padding: 0;
 }
 
 main {
-    max-width: 1250px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
     border-left: 5px solid #1F3864;
     border-right: 5px solid #1F3864;
 }
+
 label {
     margin-right: 15px;
     font-weight: bold;
@@ -16,77 +19,150 @@ label {
 
 input,
 select {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
-    justify-items: center;
+    align-items: center;
 }
 
 .date {
     display: flex;
     align-items: flex-end;
-
 }
 
 #date {
     margin-bottom: -1px;
 }
+
 .document-part {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
 }
 
 .title-part {
     background-color: #1F3864;
     color: white;
-    padding-left: 15px;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .part {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .detail-part {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-element {
+    margin-bottom: 15px;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    border-left: 5px solid #1F3864;
+    border-right: 5px solid #1F3864;
+}
+
+label {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+input,
+select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    display: flex;
+    align-items: flex-end;
+}
+
+#date {
+    margin-bottom: -1px;
+}
+
+.document-part {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.title-part {
+    background-color: #1F3864;
+    color: white;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.part {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.detail-part {
+    margin-bottom: 5px;
+    font-weight: bold;
     text-decoration: underline;
 }
 
 .input-element {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .condition {
     font-style: italic;
-    font-weight: 550;
-    font-size: 10px;
-    padding: 5px 0 4px 0;
-    margin: 0;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .price-image {
-    max-width: 1250px;
-}
-
-.input-element-radio {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-
-.inline {
-    display: inline-block;
-    margin-left: 50px;
+    max-width: 100%;
+    margin-top: 10px;
 }
 
 .submit-button {
@@ -94,8 +170,64 @@ select {
     color: white;
     font-weight: bold;
     border: none;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #FF7C00;
+}
+
+.input-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-element label {
+    margin-right: 15px;
+    font-weight: bold;
+    width: 150px; 
+}
+
+.input-element input[type="text"],
+.input-element select {
+    flex: 1; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+
+.condition {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.price-image {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.submit-button {
+    background-color: #FFA600;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #FF7C00;
 }

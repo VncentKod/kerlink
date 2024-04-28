@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles/adminDashboard.css">
 </head>
 <body>
-    <% formClient.forEach((client) => { %>
-        <div>
-            <%= client.client_name %>
-        </div>
-    <% }); %>
+    <div class="admin-dashboard">
+        <h2>All Client</h2>
+        <% if (formClient.length >0) { %>
+            <% formClient.forEach((client) => { %>
+                <a class="single "href="/admin/<%= client._id %>">
+                    <h3 class="title"><%= client.company %></h3>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>There is no blog to show</p>
+        <% } %>
+    </div>
 </body>
 </html>
