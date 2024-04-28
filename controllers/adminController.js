@@ -31,8 +31,18 @@ const verify_log = (req, res) => {
     })
 };
 
+const delete_client = (req, res) => {
+    const id = req.params.id;
+    FormClient.findByIdAndDelete(id)
+        .then((result) => {res.json({redirect: '/admin'})})
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
 module.exports = {
     admin_page,
     login_page,
-    verify_log
+    verify_log,
+    delete_client
 };

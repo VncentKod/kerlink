@@ -14,10 +14,12 @@
                 <a class="single "href="/admin/<%= client._id %>">
                     <h3 class="title"><%= client.company %></h3>
                 </a>
+                <button class="js-delete-button" data-id="<%= client._id %>">Delete</button>
             <% }) %>
         <% } else { %>
-            <p>There is no blog to show</p>
+            <p>Aucun Client n'a rempli le formulaire pour le moment</p>
         <% } %>
     </div>
+    <script src="/scripts/adminDashboard.js"></script>
 </body>
 </html>

@@ -11,4 +11,6 @@ router.get('/admin', adminController.admin_page);
 
 router.post('/login', adminController.verify_log);
 
+router.delete('/admin/:id', adminController.delete_client);
+
 module.exports = router;
