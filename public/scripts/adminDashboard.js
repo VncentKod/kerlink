@@ -57,14 +57,16 @@ function download(jsonData, companyName) {
 function makeDataBeautiful(dataFront) {
     return {
         Date: dataFront.date,
-        Company:dataFront.company,
+        Company: dataFront.company,
         StreetNumber: dataFront.street,
         StreetName: dataFront.street_n,
         City: dataFront.city,
         ZIP:dataFront.zip,
         Country:dataFront.country,
         FirstName: dataFront.client_name,
+        LastName: dataFront.client_name_2,
         PhoneNumber: dataFront.phone,
+        Mail: dataFront.mail_c,
         SupportFirstName: dataFront.name_sup,
         SupportLastName: dataFront.last_name_sup,
         SupportPhone: dataFront.phone_sup,
