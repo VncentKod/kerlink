@@ -9,7 +9,7 @@ const admin_page = (req, res) => {
         FormClient.find()
             .then((result) => {
                 res.render('admin', {formClient: result});
-            })
+            });
     } else {
         res.redirect('login');
     }
@@ -40,9 +40,27 @@ const delete_client = (req, res) => {
         })
 }
 
+const give_data = (req, res) => {
+    const id = req.params.id;
+    FormClient.findById(id)
+        .then((result) => {
+            console.log(result);
+            res.json({
+                data: {result},
+                action: {redirect: '/admin'}
+            });
+        });
+}
+
+const disconnect =(req,res) => {
+    connectedAsAdmin = false;
+    res.json({action: {redirect: '/admin'}})
+}
 module.exports = {
     admin_page,
     login_page,
     verify_log,
-    delete_client
+    delete_client,
+    give_data,
+    disconnect
 };

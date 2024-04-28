@@ -9,6 +9,7 @@
 <body>
     <div class="admin-dashboard">
         <h2>All Client</h2>
+        <button class="js-disconnect-button">Disconnect</button>
         <% if (formClient.length >0) { %>
             <% formClient.forEach((client) => { %>
                 <div class="client">
@@ -16,7 +17,7 @@
                         <h3 class="title"><%= client.company %></h3>
                     </div>
                     <div>
-                        <button class="action-button add-button js-add-button" data-id="<%= client._id %>">
+                        <button class="action-button add-button js-add-button" data-id="<%= client._id %>" data-company="<%= client.company %>">
                             <img src="/images/add-file.svg">
                         </button>
                         <button class="action-button delete-button js-delete-button" data-id="<%= client._id %>">
@@ -29,6 +30,7 @@
             <p>Aucun Client n'a rempli le formulaire pour le moment</p>
         <% } %>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="/scripts/adminDashboard.js"></script>
 </body>
 </html>
