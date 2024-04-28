@@ -11,10 +11,14 @@
         <h2>All Client</h2>
         <% if (formClient.length >0) { %>
             <% formClient.forEach((client) => { %>
-                <a class="single "href="/admin/<%= client._id %>">
-                    <h3 class="title"><%= client.company %></h3>
-                </a>
-                <button class="js-delete-button" data-id="<%= client._id %>">Delete</button>
+                <div class="client">
+                    <div class="single" href="/admin/<%= client._id %>">
+                        <h3 class="title"><%= client.company %></h3>
+                    </div>
+                    <button class="delete-button js-delete-button" data-id="<%= client._id %>">
+                        <img src="/images/trashcan.svg">
+                    </button>
+                </div>
             <% }) %>
         <% } else { %>
             <p>Aucun Client n'a rempli le formulaire pour le moment</p>
