@@ -43,7 +43,7 @@ disconnect.addEventListener('click', (event) => {
 
 function download(jsonData, companyName) {
     // Votre objet JSON
-
+    jsonData = makeDataBeautiful(jsonData);
     // Convertir l'objet JSON en chaîne de caractères
     var jsonString = JSON.stringify(jsonData);
 
@@ -52,4 +52,25 @@ function download(jsonData, companyName) {
 
     // Télécharger le fichier en utilisant FileSaver.js
     saveAs(blob, `${companyName}.json`);     
+}
+
+function makeDataBeautiful(dataFront) {
+    return {
+        Date: dataFront.date,
+        Company:dataFront.company,
+        StreetNumber: dataFront.street,
+        StreetName: dataFront.street_n,
+        City: dataFront.city,
+        ZIP:dataFront.zip,
+        Country:dataFront.country,
+        FirstName: dataFront.client_name,
+        PhoneNumber: dataFront.phone,
+        SupportFirstName: dataFront.name_sup,
+        SupportLastName: dataFront.last_name_sup,
+        SupportPhone: dataFront.phone_sup,
+        MailSupport: dataFront.mail,
+        Start: dataFront.start_date,
+        NetSize: dataFront.netSize,
+        Periodicity: dataFront.periodicity
+        }
 }

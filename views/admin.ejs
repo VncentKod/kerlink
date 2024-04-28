@@ -8,8 +8,12 @@
 </head>
 <body>
     <div class="admin-dashboard">
-        <h2>All Client</h2>
-        <button class="js-disconnect-button">Disconnect</button>
+        <div class="client">
+            <h2>All Client</h2>
+            <button class="action-button delete-button js-disconnect-button">
+                <img src="/images/disconnect.svg" alt="">
+            </button>
+        </div>
         <% if (formClient.length >0) { %>
             <% formClient.forEach((client) => { %>
                 <div class="client">
